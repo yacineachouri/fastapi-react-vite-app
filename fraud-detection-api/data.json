@@ -1,0 +1,7 @@
+{
+  "amount": 20000,
+  "country": "FR",
+  "transaction_type": "transfer",
+  "frequency": 30,
+  "account_age_days": 3
+}
