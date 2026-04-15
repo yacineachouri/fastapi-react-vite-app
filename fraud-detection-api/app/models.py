@@ -12,3 +12,4 @@ class TransactionDB(Base):
     account_age_days = Column(Integer)
     risk_score = Column(Float)
     is_suspicious = Column(Integer)
+    risk_level = Column(String)
