@@ -77,6 +77,25 @@ def detect_fraud(tx: Transaction):
         "reasons": reasons
     }
 
+@app.get("/transactions")
+def get_transactions():
+    db = SessionLocal()
+
+    transactions = db.query(TransactionDB).all()
+
+    result = []
+    for tx in transactions:
+        result.append({
+            "amount": tx.amount,
+            "country": tx.country,
+            "type": tx.transaction_type,
+            "risk": tx.risk_level,
+            "score": tx.risk_score
+        })
+
+    db.close()
+    return result
+
 
 @app.get("/report")
 def generate_report():
