@@ -18,4 +18,4 @@ def rule_based_score(tx):
         score += 0.2
         reasons.append("New account")
 
-    return min(score, 1.0), reasons
+    return min(score, 1.0), ", ".join(reasons)
